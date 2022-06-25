@@ -1,0 +1,16 @@
+@import '@/src/mixins.scss';
+
+.sidebar {
+    background-color: var(--color-lightblue);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+
+    @include desktop-down {
+        padding: 4rem 1.5rem;
+    }
+}
