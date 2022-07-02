@@ -9,7 +9,13 @@
     line-height: 2.4rem;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    position: relative;
+
+
+    label {
+      display: flex;
+    }
 
     a {
     transition: all .25s ease;
@@ -35,7 +41,7 @@
       appearance: none;
       margin-right: 1.4rem;
       cursor: pointer;
-      border: 2px solid white;
+      border: 2px solid currentColor;
       border-radius: 5px;
       position: relative;
 
@@ -55,7 +61,7 @@
     }
 
     @include desktop-down {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
 
       input[type="checkbox"] {
         margin-right: 0.7rem;

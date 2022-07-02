@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-
+import React from "react";
 import SrOnly from "../../SrOnly/SrOnly";
 import "./StepListItem.style.scss";
+import LinesSvg from "./LinesSvg/LinesSvg";
 
 function StepListItem({ isLast, step, handleClick }) {
   const makeClass = (step) => {
@@ -13,28 +14,31 @@ function StepListItem({ isLast, step, handleClick }) {
   const labelName = step.name.toLowerCase().replace(" ", "-");
 
   return (
-    <li className={makeClass(step)}>
-      <label htmlFor={labelName}>
-        <input
-          tabIndex="-1"
-          readOnly
-          type="checkbox"
-          checked={step.isCompleted}
-          name={labelName}
-          id={labelName}
-        />
-        <SrOnly text={`Step ${labelName} completed`} />
-      </label>
-      <a
-        onClick={(e) => {
-          e.preventDefault();
-          handleClick();
-        }}
-        href=""
-      >
-        {step.name}
-      </a>
-    </li>
+    <>
+      <li className={makeClass(step)}>
+        <label htmlFor={labelName}>
+          <input
+            tabIndex="-1"
+            readOnly
+            type="checkbox"
+            checked={step.isCompleted}
+            name={labelName}
+            id={labelName}
+          />
+          <SrOnly text={`Step ${labelName} completed`} />
+        </label>
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick();
+          }}
+          href=""
+        >
+          {step.name}
+        </a>
+        {!isLast && <LinesSvg />}
+      </li>
+    </>
   );
 }
 

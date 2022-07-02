@@ -47,7 +47,11 @@ function App() {
     <div className="App">
       <div className="user-boarding">
         {/* Sidebar */}
-        <Sidebar steps={steps} handleClick={handleChangeStepByName} />
+        <Sidebar
+          steps={steps}
+          handleClick={handleChangeStepByName}
+          currentStep={currentStepNr}
+        />
         {/* Main Component */}
         <div>
           <h1>{steps[currentStepNr].name}</h1>
